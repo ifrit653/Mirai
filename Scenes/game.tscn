@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceeon4l15kdpf"]
+
+[ext_resource type="Script" uid="uid://cwl02wgytiqm5" path="res://Scripts/game.gd" id="1_qxrlw"]
+[ext_resource type="Script" uid="uid://c55vpei364nfa" path="res://Scenes/paper_getter.gd" id="2_3dryh"]
+[ext_resource type="PackedScene" uid="uid://c5pglbbyft61" path="res://Scenes/paper.tscn" id="2_wrm1d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wowpa"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_qxrlw")
+
+[node name="PaperGetter" type="Area2D" parent="."]
+script = ExtResource("2_3dryh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PaperGetter"]
+shape = SubResource("CircleShape2D_wowpa")
+
+[node name="Paper" parent="." instance=ExtResource("2_wrm1d")]
+position = Vector2(640, 405)
