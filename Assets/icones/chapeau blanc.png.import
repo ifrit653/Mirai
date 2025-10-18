@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwceth4271y3c"
-path="res://.godot/imported/suspect1.png-810fac86511327ffe8ecc0e7e545ebf1.ctex"
+uid="uid://bmmvyhkuv3sfv"
+path="res://.godot/imported/chapeau blanc.png-7997a6482b9b42523823d093230052ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/suspect1.png"
-dest_files=["res://.godot/imported/suspect1.png-810fac86511327ffe8ecc0e7e545ebf1.ctex"]
+source_file="res://Assets/icones/chapeau blanc.png"
+dest_files=["res://.godot/imported/chapeau blanc.png-7997a6482b9b42523823d093230052ba.ctex"]
 
 [params]
 
