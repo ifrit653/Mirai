@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyg6i57wso7cy"
-path="res://.godot/imported/arrière-plan.png-0ac074fa3d121ed1b2f1d0de4c08c71d.ctex"
+uid="uid://dd77w2632si1w"
+path="res://.godot/imported/new desk.png-bc4a6bd5ee03dd7c2d7f923b91161677.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/bureau/arrière-plan.png"
-dest_files=["res://.godot/imported/arrière-plan.png-0ac074fa3d121ed1b2f1d0de4c08c71d.ctex"]
+source_file="res://Assets/bureau/new desk.png"
+dest_files=["res://.godot/imported/new desk.png-bc4a6bd5ee03dd7c2d7f923b91161677.ctex"]
 
 [params]
 

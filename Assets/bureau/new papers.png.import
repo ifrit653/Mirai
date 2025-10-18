@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oan4lsm6c50o"
-path="res://.godot/imported/bureau.png-2515df7b2a63e77219d194e3abe5d1d8.ctex"
+uid="uid://dsnhfwl0vwude"
+path="res://.godot/imported/new papers.png-facc03e1eb8ee4ef32e6095037150aca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/bureau/bureau.png"
-dest_files=["res://.godot/imported/bureau.png-2515df7b2a63e77219d194e3abe5d1d8.ctex"]
+source_file="res://Assets/bureau/new papers.png"
+dest_files=["res://.godot/imported/new papers.png-facc03e1eb8ee4ef32e6095037150aca.ctex"]
 
 [params]
 
