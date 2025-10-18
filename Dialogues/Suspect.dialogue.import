@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c432wd6kbrmbo"
+path="res://.godot/imported/Suspect.dialogue-ab95e317d1e9af01127e4ca0ffd39177.tres"
+
+[deps]
+
+source_file="res://Dialogues/Suspect.dialogue"
+dest_files=["res://.godot/imported/Suspect.dialogue-ab95e317d1e9af01127e4ca0ffd39177.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,55 @@
+~ start
+- Good Morning Sir, do you mind explaining to me what happened this morning ?
+	Arrestee: It's as written in that report Mr. Officer. I was caught stealing a convenience store.
+	Officer: I do see that but it's also your first offense. You quite strike me like an honest man. Why did you do that ?
+	Arrestee: It’s hard to explain. You ever felt the world just closes in on you?
+	Officer: Happens more than you think. Still, that’s no excuse for theft.
+	Arrestee: Maybe not. But when you’ve got nothing left, you stop thinking straight.
+	Officer: Alright, I get it. I see a lot of different cases in this post everyday after all. [wait=2] You look tired. 
+	Arrestee: I didn’t plan any of this. I just needed to eat. Needed something to drink, maybe forget a little.
+	Officer: *sighs* You’re not making my job any easier, you know that?
+	- Your future now depends on me, but if you please me... I can help you get out of this.
+		Arrestee: What do you mean, Sir?
+		Officer: I’m saying, maybe I can make this whole thing disappear. If you can make it worth my time.
+		Arrestee: Oh... I see. So that’s how it works.
+		Officer: That’s how it works when people like you make it complicated. How ùuch do you have ?
+		Arrestee: Then we understand each other, Sir. I have 10k on meright now.
+	- You may have your circumstances, but I’ll have to do my job. You’ll have to take responsibility for your actions.
+		Arrestee: I can’t object. My life is in your hands.
+		Officer: For what it’s worth, I believe you didn’t mean harm. But the law’s the law.
+		Arrestee: ...I guess I deserve what’s coming.
+		Officer: Maybe. Or maybe this is where you start over.
+		Officer: Guard, take him in. Treat him gently.
+		Arrestee: Thank you, Officer. For treating me like a person.
+		Officer: Let’s hope the system does the same.
+- Why are you even here? Someone drag this guy in a cell already !!
+	Arrestee: *shivers at your cruelty* 
+	Officer: You think stealing is some kind of game?
+	Arrestee: No, Sir! I was just hungry!
+	Officer: Don’t talk unless I ask you to! You disgust me.
+	Arrestee: Please... I didn’t hurt anyone...
+	Officer: Oh, you didn’t hurt anyone? Tell that to the man whose store you stole from. 
+	- I’ve heard enough. You’re done. You’ll rot in that cell until you learn respect.
+		Arrestee: *weakly* Please... I don’t want to die in there...
+		Officer: Should’ve thought of that before you stole. Guard! Take him away.
+		Officer: Justice served — or maybe just another day at the office.
+	- *pauses* ...You said you were hungry?
+		Arrestee: Yes, Sir. I haven’t eaten in two days.
+		Officer: Damn it... You really make this hard, you know that?
+		Arrestee: I’m sorry. I’ll pay back, I swear.
+		Officer: You’ll still spend the night here. But I’ll see what I can do in the morning.
+		Arrestee: You mean... you’ll help me?
+		Officer: Don’t thank me yet. You still broke the law. But maybe there’s still something left in you worth saving.
+		Arrestee: Thank you, Sir. Truly.
+		Officer: Don’t make me regret it.
+	- *leans closer, lowering voice* You say you’ll pay back... how exactly?
+		Arrestee: There might be... another way to settle this, Sir. Between us.
+		Officer: Go on.
+		Arrestee: I’m not asking for mercy. Just... understanding. I can make it worth your while.
+		Officer: ...
+		Arrestee: How about 10k
+		Officer: ...
+		Arrestee: We don’t need to write anything down, do we?
+		Officer: I suppose not.
+		Arrestee: Then... we understand each other.
+=> END
