@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj8f07d3be0oe"]
+
+[ext_resource type="Script" uid="uid://dbt5vp24o4xql" path="res://Scripts/drop_zone.gd" id="1_tcq6s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shdp8"]
+size = Vector2(1155, 656)
+
+[node name="DropZone" type="Area2D"]
+visibility_layer = 2
+script = ExtResource("1_tcq6s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(575.5, 327)
+shape = SubResource("RectangleShape2D_shdp8")
+debug_color = Color(0, 0.3994683, 0.35285452, 0.41960785)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5pglbbyft61"]
+
+[ext_resource type="Script" uid="uid://bldelfuq3e6rp" path="res://Scripts/draggable_document.gd" id="1_wjcq4"]
+[ext_resource type="Texture2D" uid="uid://coub8lqtfnwkn" path="res://Assets/large-paper.png" id="2_b84cw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8qwm"]
+size = Vector2(224, 324)
+
+[node name="DraggableDocument" type="Area2D"]
+script = ExtResource("1_wjcq4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_b84cw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_f8qwm")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
