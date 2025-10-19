@@ -1,19 +1,20 @@
 extends Area2D
 
+signal area_clicked
+
 @onready var stamp: Sprite2D = %Stamp
 @onready var hands: Sprite2D = %Hands
 @onready var inner_thoughts: CanvasLayer = %InnerThoughts
 @onready var interphone: Sprite2D = %Interphone
 @onready var interphone_label: Label = %InterphoneLabel
 @onready var call: CanvasLayer = %Call
-
 # Preload the dialogue resources and shader
 var dialogue_resource = preload("res://Dialogues/OfficerInnerThoughtsuntitled.dialogue")
 var call_dialogue_resource = preload("res://Dialogues/call.dialogue")
 var suspect_shader = preload("res://Shader/suspect.gdshader")
-
 var balloon_instance = null
 var is_mouse_over_interphone = false
+var interphone_clicked = false
 
 func _ready():
 	# Debug: Check if nodes are found
@@ -38,6 +39,7 @@ func _ready():
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int):
 	if event.is_action_pressed("click"):
 		print("You clicked me")
+		area_clicked.emit()
 		_handle_click()
 
 func _handle_click():
@@ -52,6 +54,7 @@ func _handle_click():
 		_handle_hands_click()
 	elif interphone and _is_point_in_sprite(interphone, mouse_pos):
 		print("Clicked on interphone")
+		interphone_clicked = true
 		_handle_interphone_click()
 
 func _is_point_in_sprite(sprite: Sprite2D, point: Vector2) -> bool:
@@ -119,7 +122,7 @@ func start_dialogue(dialogue_resource: Resource, dialogue_type: String = "inner_
 		print("Error: Could not find balloon node for dialogue type: " + dialogue_type)
 
 func _process(_delta):
-	if is_mouse_over_interphone and interphone_label:
+	if is_mouse_over_interphone and interphone_label and not interphone_clicked:
 		var mouse_pos = get_global_mouse_position()
 		interphone_label.global_position = mouse_pos + Vector2(10, 10)  # Offset from mouse
 		interphone_label.show()

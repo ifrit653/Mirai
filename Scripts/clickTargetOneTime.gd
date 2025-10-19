@@ -1,7 +1,9 @@
 extends Area2D
+
+signal area_clicked
+
 @onready var sprite = %Suspect
 @onready var balloon: CanvasLayer = %Balloon
-
 # Preload the dialogue resource
 var dialogue_resource = preload("res://Dialogues/Suspect.dialogue")
 
@@ -12,6 +14,7 @@ func _ready():
 func _input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("click"):
 		print("You clicked me")
+		area_clicked.emit()
 		start_dialogue()
 
 func _on_mouse_entered():
