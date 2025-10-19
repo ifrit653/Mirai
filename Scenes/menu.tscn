@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cooaj4ivfxxdq"]
 
-[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_158mb"]
+[ext_resource type="Script" uid="uid://deoxxgjrdu61v" path="res://Scripts/main_menu.gd" id="1_158mb"]
 [ext_resource type="Texture2D" uid="uid://srnaqjol4sjj" path="res://Assets/menu screen.png" id="2_wwsa2"]
 [ext_resource type="StyleBox" path="res://Shader/hover.tres" id="3_jsrd8"]
 [ext_resource type="AudioStream" uid="uid://bm0b3sa057clb" path="res://Sounds/Strings of the Villain.mp3" id="4_wbdvm"]
