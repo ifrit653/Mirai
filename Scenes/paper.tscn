@@ -5,6 +5,7 @@
 
 [node name="Paper" type="Area2D"]
 script = ExtResource("1_c7gsp")
+paper_id = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_c7gsp")

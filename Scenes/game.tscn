@@ -9,6 +9,7 @@ script = ExtResource("1_qxrlw")
 [node name="Paper" parent="." instance=ExtResource("2_wrm1d")]
 position = Vector2(1037, 247)
 scale = Vector2(0.4, 0.4)
+paper_id = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 328)
