@@ -8,6 +8,7 @@ signal area_clicked
 @onready var interphone: Sprite2D = %Interphone
 @onready var interphone_label: Label = %InterphoneLabel
 @onready var call: CanvasLayer = %Call
+
 # Preload the dialogue resources and shader
 var dialogue_resource = preload("res://Dialogues/OfficerInnerThoughtsuntitled.dialogue")
 var call_dialogue_resource = preload("res://Dialogues/call.dialogue")
