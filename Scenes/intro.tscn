@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://dr3c245olc2ai"]
+
+[ext_resource type="Script" uid="uid://bx1shmvy74ofp" path="res://label.gd" id="1_b226h"]
+[ext_resource type="AudioStream" uid="uid://dsii5tdkmcqg6" path="res://Sounds/talk.wav" id="2_duh1u"]
+
+[sub_resource type="SystemFont" id="SystemFont_duh1u"]
+font_names = PackedStringArray("Segoe UI")
+font_italic = true
+font_weight = 475
+font_stretch = 200
+
+[sub_resource type="LabelSettings" id="LabelSettings_alxvg"]
+font = SubResource("SystemFont_duh1u")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_alxvg"]
+font_names = PackedStringArray("Britannic")
+
+[sub_resource type="LabelSettings" id="LabelSettings_geirw"]
+font = SubResource("SystemFont_alxvg")
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = -10
+offset_right = 1156.0
+offset_bottom = 652.0
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+z_index = 10
+layout_mode = 0
+offset_left = 20.0
+offset_top = 8.0
+offset_right = 1123.0
+offset_bottom = 618.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "In Madagascar, corruption runs deep.
+ From the highest offices to the dusty backstreets
+ where the law is supposed to protect the people,
+ bribes exchange hands like currency 
+and justice often depends on who can pay the most.
+ Innocent citizens are framed to fill quotas while the guilty walk free
+ after slipping an envelope under the table.
+ Within the police force, loyalty to the badge is tested daily 
+by greed, fear and survival. 
+
+You are a new officer stepping into this world.
+ Every arrest, every report, every choice carries a price.
+ Will you resist the rot and fight for real justice or join the system,
+ using corruption to your own advantage? 
+
+In the end, your honor or your wallet will define the law."
+label_settings = SubResource("LabelSettings_alxvg")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("1_b226h")
+delay_between_lines = 2.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer/ColorRect/Label"]
+position = Vector2(-20, -8)
+stream = ExtResource("2_duh1u")
+
+[node name="Label2" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 601.0
+offset_right = 263.0
+offset_bottom = 636.0
+text = "Press space to skip"
+label_settings = SubResource("LabelSettings_geirw")
