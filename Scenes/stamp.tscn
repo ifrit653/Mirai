@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqlvhc3lmeg31"]
+
+[ext_resource type="Texture2D" uid="uid://cqgv0fakouefq" path="res://Assets/bureau/stamp.png" id="1_6mb4n"]
+[ext_resource type="Script" uid="uid://b468nohdj13kw" path="res://Scripts/ClickTargetContinuous.gd" id="2_11415"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Stamp" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(548, 283)
+texture = ExtResource("1_6mb4n")
+
+[node name="Area2D" type="Area2D" parent="Stamp"]
+position = Vector2(-548, -283)
+script = ExtResource("2_11415")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stamp/Area2D"]
+position = Vector2(548, 283)
+polygon = PackedVector2Array(46, -75, 46, -74, 18, -73, -18, -73, -42.1, -71, -50.6, -71, -51.6, -69, -52.8, -69, -54, -62.1, -54, -57.4, -55.4, -56, -57, -56, -54, 50, -54, 52.399994, -52, 54.399994, -52, 55.600006, -49.2, 57, -46.2, 57, -39, 60.600006, -39, 62, -35.199997, 62, -28, 65.600006, -28, 66.8, -21, 68.8, -21, 69.899994, -12, 70.899994, -12, 72.2, 13.199997, 68, 20.099998, 68, 74.2, 58, 80.2, 58, 84.2, 56, 86, 56, 83, -43, 83, -59.3, 80, -63.4, 80, -65.6, 78, -66.6, 78, -68.6, 70, -73.5, 70, -75)
