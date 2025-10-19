@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ynegq3yoc2p0"]
+[gd_scene load_steps=4 format=3 uid="uid://ynegq3yoc2p0"]
 
-[ext_resource type="Script" path="res://Scripts/paper_view.gd" id="1_5orf5"]
+[ext_resource type="Script" uid="uid://b63nw4xn48dqr" path="res://Scripts/paper_view.gd" id="1_5orf5"]
+[ext_resource type="FontFile" uid="uid://dvn36h2j6d15b" path="res://Assets/fonts/TypewrtiterFont.ttf" id="2_mk63f"]
 [ext_resource type="Texture2D" uid="uid://bjrjl64cay87m" path="res://Assets/large-paper.png" id="2_pq50k"]
 
 [node name="PaperView" type="Node2D"]
@@ -15,7 +16,10 @@ offset_bottom = 274.0
 theme_override_colors/font_color = Color(0.9192808, 4.47616e-06, 1.1551381e-06, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 35
+theme_override_fonts/font = ExtResource("2_mk63f")
+theme_override_font_sizes/font_size = 10
+autowrap_mode = 3
+clip_text = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(111, 164)

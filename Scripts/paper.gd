@@ -2,7 +2,7 @@ extends Area2D
 
 var shader = preload("res://Shader/suspect.gdshader")
 @onready var  paper_sprite : Sprite2D = $Sprite2D 
-
+@export var paper_id: String = "note_01"  # Set this in the Inspector for each paper
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		show_paper()
@@ -10,7 +10,7 @@ func _input_event(viewport, event, shape_idx):
 func show_paper():
 	var paper_view_scene = preload("res://Scenes/paper_view.tscn")
 	var paper_view = paper_view_scene.instantiate()
-
+	var is_shwan = true 
 	# Add to UI layer (so it's always on top and uses screen coordinates)
 	var ui_layer = get_tree().current_scene.get_node("UILayer")
 	if ui_layer:
@@ -18,6 +18,7 @@ func show_paper():
 	else:
 		push_error("UILayer not found in current scene!")
 		return
+	paper_view.show_paper(paper_id)
 
 	# Center it in the screen
 	var viewport_rect = get_viewport().get_visible_rect()
