@@ -1,12 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://dprbkt25ydt22"]
+[gd_scene load_steps=9 format=3 uid="uid://d4b4kp5eb7yuu"]
 
+[ext_resource type="PackedScene" path="res://Scenes/interphone.tscn" id="1_2jlrf"]
 [ext_resource type="Texture2D" uid="uid://capmk8oduuofa" path="res://Assets/bureau/arrièreplan.png" id="1_vggx3"]
+[ext_resource type="PackedScene" path="res://Scenes/officer.tscn" id="2_7xo7e"]
 [ext_resource type="Texture2D" uid="uid://dd77w2632si1w" path="res://Assets/bureau/new desk.png" id="2_cumm5"]
 [ext_resource type="AudioStream" uid="uid://cw17ct3n0exri" path="res://Sounds/Relaxing Ambient Soundscape - Police Headquarters - Police Station Ambience - Radios - PhoneTyping.mp3" id="3_2jlrf"]
+[ext_resource type="PackedScene" path="res://Scenes/stamp.tscn" id="3_eqlnk"]
+[ext_resource type="PackedScene" uid="uid://defwsqvljheyh" path="res://Scenes/suspect.tscn" id="4_o84nh"]
+[ext_resource type="Script" path="res://Scripts/clickTargetOneTime.gd" id="8_o84nh"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Arrièreplan" type="Sprite2D" parent="."]
+z_index = -2
 position = Vector2(582.25, 325.75)
 scale = Vector2(0.6059896, 0.6023149)
 texture = ExtResource("1_vggx3")
@@ -20,3 +26,44 @@ texture = ExtResource("2_cumm5")
 stream = ExtResource("3_2jlrf")
 volume_db = 24.0
 autoplay = true
+
+[node name="Node2D" parent="." instance=ExtResource("1_2jlrf")]
+position = Vector2(140, 225)
+
+[node name="Interphone" parent="Node2D" index="0"]
+position = Vector2(483.875, 208.49998)
+scale = Vector2(0.44708332, 0.465)
+
+[node name="CollisionPolygon2D" parent="Node2D/Interphone/Area2D" index="0"]
+polygon = PackedVector2Array(-92, -23, -92, -21.700012, -100.399994, -20, -102.899994, -20, -110.899994, -11, -112.7, -11, -114, -2.100006, -114, 16.399994, -124.399994, 42, -125.7, 42, -130, 69.79999, -130, 124.29999, -122.399994, 147, -123, 166, -123, 183.20001, -140.9, 203, -142.7, 203, -145.7, 219, -147.2, 219, -145, 241.20001, -145, 243.90002, -135, 252.79999, -135, 254.29999, -121, 260.2, -121, 262, 145.70001, 262, 157.70001, 253, 159.4, 253, 162.4, 244, 164, 244, 163.60226, 226.10216, 163.3193, 213.36992, 163, 199, 163, 192.70001, 103, -14.299988, 103, -17, 98, -21, 98, -23)
+
+[node name="InterphoneLabel" parent="Node2D" index="1"]
+offset_left = 1043.0
+offset_top = 121.0
+offset_right = 1237.0
+offset_bottom = 155.0
+
+[node name="Node2D2" parent="." instance=ExtResource("2_7xo7e")]
+position = Vector2(11, 22)
+
+[node name="Node2D3" parent="." instance=ExtResource("3_eqlnk")]
+position = Vector2(-295, 182)
+
+[node name="Stamp" parent="Node2D3" index="0"]
+position = Vector2(556, 301.5)
+scale = Vector2(0.62, 0.65500015)
+
+[node name="Node2D4" parent="." instance=ExtResource("4_o84nh")]
+position = Vector2(-4, -5)
+
+[node name="Suspect" parent="Node2D4" index="0"]
+z_index = -1
+position = Vector2(570, 223.566)
+scale = Vector2(0.35826066, 0.3825306)
+
+[node name="Area2D" parent="Node2D4/Suspect" index="0"]
+script = ExtResource("8_o84nh")
+
+[editable path="Node2D"]
+[editable path="Node2D3"]
+[editable path="Node2D4"]
