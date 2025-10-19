@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://lmjt5uh5cdn0"]
+
+[ext_resource type="Script" uid="uid://db2v4pjpwpn74" path="res://Scripts/interfonne.gd" id="1_nomei"]
+[ext_resource type="Texture2D" uid="uid://wrglprcp6tii" path="res://Assets/bureau/interphone.png" id="1_np6dw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nomei"]
+size = Vector2(301, 279)
+
+[node name="Interfonne" type="Area2D"]
+script = ExtResource("1_nomei")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_np6dw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10.5, 120.5)
+shape = SubResource("RectangleShape2D_nomei")

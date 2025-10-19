@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cvdp2b5ooucuk"
+path="res://.godot/imported/OfficerInnerThoughtsuntitled.dialogue-e16021320ee51373c49cb363c0e58f92.tres"
+
+[deps]
+
+source_file="res://Dialogues/OfficerInnerThoughtsuntitled.dialogue"
+dest_files=["res://.godot/imported/OfficerInnerThoughtsuntitled.dialogue-e16021320ee51373c49cb363c0e58f92.tres"]
+
+[params]
+
+defaults=true

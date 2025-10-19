@@ -4,12 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://coub8lqtfnwkn" path="res://Assets/large-paper.png" id="2_b84cw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8qwm"]
-size = Vector2(224, 324)
+size = Vector2(225, 321)
 
 [node name="DraggableDocument" type="Area2D"]
 script = ExtResource("1_wjcq4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(-1, -1)
 texture = ExtResource("2_b84cw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

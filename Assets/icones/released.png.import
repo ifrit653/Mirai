@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:Assets/bureau/new desk.png.import
-uid="uid://dd77w2632si1w"
-path="res://.godot/imported/new desk.png-bc4a6bd5ee03dd7c2d7f923b91161677.ctex"
-========
-uid="uid://cqgv0fakouefq"
-path="res://.godot/imported/stamp.png-707088567e384ba7ed10b553a8511e78.ctex"
->>>>>>>> dev:Assets/bureau/stamp.png.import
+uid="uid://eesjal1tk72b"
+path="res://.godot/imported/released.png-461f0b3b4cd63470d1dd3c74a28dd8ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:Assets/bureau/new desk.png.import
-source_file="res://Assets/bureau/new desk.png"
-dest_files=["res://.godot/imported/new desk.png-bc4a6bd5ee03dd7c2d7f923b91161677.ctex"]
-========
-source_file="res://Assets/bureau/stamp.png"
-dest_files=["res://.godot/imported/stamp.png-707088567e384ba7ed10b553a8511e78.ctex"]
->>>>>>>> dev:Assets/bureau/stamp.png.import
+source_file="res://Assets/icones/released.png"
+dest_files=["res://.godot/imported/released.png-461f0b3b4cd63470d1dd3c74a28dd8ef.ctex"]
 
 [params]
 
