@@ -8,8 +8,8 @@ extends Area2D
 @onready var call: CanvasLayer = %Call
 
 # Preload the dialogue resources and shader
-var dialogue_resource = preload("res://Dialogues/OfficerInnerThoughtsuntitled.dialogue").instantiate()
-var call_dialogue_resource = preload("res://Dialogues/call.dialogue").instantiate()
+var dialogue_resource = preload("res://Dialogues/OfficerInnerThoughtsuntitled.dialogue")
+var call_dialogue_resource = preload("res://Dialogues/call.dialogue")
 var suspect_shader = preload("res://Shader/suspect.gdshader")
 
 var balloon_instance = null

@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://ceeon4l15kdpf"]
+[gd_scene load_steps=3 format=3 uid="uid://ceeon4l15kdpf"]
 
 [ext_resource type="Script" uid="uid://cwl02wgytiqm5" path="res://Scripts/game.gd" id="1_qxrlw"]
-[ext_resource type="PackedScene" uid="uid://lmjt5uh5cdn0" path="res://Scenes/interfonne.tscn" id="2_qxrlw"]
-[ext_resource type="PackedScene" uid="uid://cbr2pnbb1rng8" path="res://Scenes/paper.tscn" id="2_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://dx7uyfwskig0w" path="res://Scenes/paper.tscn" id="2_wrm1d"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_qxrlw")
 
-[node name="Interfonne" parent="." instance=ExtResource("2_qxrlw")]
-
 [node name="Paper" parent="." instance=ExtResource("2_wrm1d")]
-position = Vector2(868, 189)
+position = Vector2(1037, 247)
+scale = Vector2(0.4, 0.4)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 328)
+
+[node name="UILayer" type="CanvasLayer" parent="."]
