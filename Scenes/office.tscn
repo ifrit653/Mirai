@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4b4kp5eb7yuu"]
+[gd_scene load_steps=11 format=3 uid="uid://d4b4kp5eb7yuu"]
 
 [ext_resource type="PackedScene" uid="uid://dgjpc00kajjbn" path="res://Scenes/interphone.tscn" id="1_2jlrf"]
 [ext_resource type="Texture2D" uid="uid://36pqkh2yjkeu" path="res://Assets/bureau/arrièreplan.png" id="1_vggx3"]
@@ -7,7 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://c8e847j6gkbh2" path="res://Sounds/Relaxing Ambient Soundscape - Police Headquarters - Police Station Ambience - Radios - PhoneTyping.mp3" id="3_2jlrf"]
 [ext_resource type="PackedScene" path="res://Scenes/stamp.tscn" id="3_eqlnk"]
 [ext_resource type="Script" uid="uid://beyabqaa3vxiy" path="res://Scripts/ordermanager.gd" id="4_2vylc"]
+[ext_resource type="Script" uid="uid://dw65l6fus1ypl" path="res://Scripts/audio_stream_player_2d.gd" id="4_4luf0"]
 [ext_resource type="PackedScene" uid="uid://defwsqvljheyh" path="res://Scenes/suspect.tscn" id="4_o84nh"]
+[ext_resource type="PackedScene" uid="uid://dm5mmcsfxvelm" path="res://Scenes/paper.tscn" id="10_4luf0"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -26,6 +28,7 @@ texture = ExtResource("2_cumm5")
 stream = ExtResource("3_2jlrf")
 volume_db = 24.0
 autoplay = true
+script = ExtResource("4_4luf0")
 
 [node name="OrderManager" type="Node2D" parent="."]
 script = ExtResource("4_2vylc")
@@ -46,8 +49,14 @@ offset_top = 121.0
 offset_right = 1237.0
 offset_bottom = 155.0
 
+[node name="Call" parent="OrderManager/Interphone" index="2"]
+visible = false
+
 [node name="Officer" parent="OrderManager" instance=ExtResource("2_7xo7e")]
 position = Vector2(11, 22)
+
+[node name="InnerThoughts" parent="OrderManager/Officer" index="1"]
+visible = false
 
 [node name="Stamp" parent="OrderManager" instance=ExtResource("3_eqlnk")]
 position = Vector2(-295, 182)
@@ -64,7 +73,19 @@ z_index = -1
 position = Vector2(570, 223.566)
 scale = Vector2(0.35826066, 0.3825306)
 
+[node name="Balloon" parent="OrderManager/Suspect0" index="1"]
+visible = false
+
+[node name="Paper" parent="OrderManager" instance=ExtResource("10_4luf0")]
+position = Vector2(920, 400)
+scale = Vector2(0.4, 0.4)
+paper_id = 1
+
+[node name="UILayer" type="CanvasLayer" parent="OrderManager"]
+unique_name_in_owner = true
+
 [editable path="OrderManager/Interphone"]
 [editable path="OrderManager/Officer"]
 [editable path="OrderManager/Stamp"]
 [editable path="OrderManager/Suspect0"]
+[editable path="OrderManager/Paper"]
