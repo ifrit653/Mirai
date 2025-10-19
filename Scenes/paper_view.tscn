@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ynegq3yoc2p0"]
 
-[ext_resource type="Script" uid="uid://b63nw4xn48dqr" path="res://Scripts/paper_view.gd" id="1_5orf5"]
-[ext_resource type="Texture2D" uid="uid://coub8lqtfnwkn" path="res://Assets/large-paper.png" id="2_pq50k"]
+[ext_resource type="Script" path="res://Scripts/paper_view.gd" id="1_5orf5"]
+[ext_resource type="Texture2D" uid="uid://bjrjl64cay87m" path="res://Assets/large-paper.png" id="2_pq50k"]
 
 [node name="PaperView" type="Node2D"]
 script = ExtResource("1_5orf5")
