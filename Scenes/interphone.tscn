@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c61yxk6hlfvat"]
+[gd_scene load_steps=5 format=3 uid="uid://dgjpc00kajjbn"]
 
 [ext_resource type="Texture2D" uid="uid://wrglprcp6tii" path="res://Assets/bureau/interphone.png" id="1_fpgwq"]
-[ext_resource type="Script" uid="uid://b468nohdj13kw" path="res://Scripts/ClickTargetContinuous.gd" id="2_cmyk2"]
+[ext_resource type="Script" path="res://Scripts/ClickTargetContinuous.gd" id="2_cmyk2"]
 [ext_resource type="PackedScene" uid="uid://huyxkqmaakqb" path="res://Dialogues/Call.tscn" id="3_mo717"]
-[ext_resource type="Script" uid="uid://bwiwn1gqeyyfe" path="res://Scripts/call.gd" id="4_avo7e"]
+[ext_resource type="Script" path="res://Scripts/call.gd" id="4_avo7e"]
 
 [node name="Node2D" type="Node2D"]
 

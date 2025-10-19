@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bto3rn22d60et"]
+
+[ext_resource type="Texture2D" uid="uid://capmk8oduuofa" path="res://Assets/bureau/arrièreplan.png" id="1_8gbba"]
+[ext_resource type="Texture2D" uid="uid://dd77w2632si1w" path="res://Assets/bureau/new desk.png" id="2_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://c0qamqsie4jih" path="res://Assets/bureau/hands.png" id="3_kry3j"]
+
+[node name="Main" type="Node2D"]
+position = Vector2(4, 4)
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="ArrièrePlan" type="Sprite2D" parent="Background"]
+position = Vector2(577.29474, 328.54688)
+scale = Vector2(0.596568, 0.59898716)
+texture = ExtResource("1_8gbba")
+
+[node name="Bureau" type="Sprite2D" parent="Background"]
+position = Vector2(576.62494, 327.99997)
+scale = Vector2(0.5972656, 0.6000001)
+texture = ExtResource("2_jjvhh")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(580, 327)
+
+[node name="PlayerView" type="CanvasLayer" parent="."]
+
+[node name="Hand" type="Sprite2D" parent="PlayerView"]
+position = Vector2(576, 429)
+scale = Vector2(0.49333337, 0.49333337)
+texture = ExtResource("3_kry3j")

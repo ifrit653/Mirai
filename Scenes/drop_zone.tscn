@@ -1,13 +1,40 @@
 [gd_scene load_steps=3 format=3 uid="uid://bj8f07d3be0oe"]
 
-[ext_resource type="Script" uid="uid://dbt5vp24o4xql" path="res://Scripts/drop_zone.gd" id="1_tcq6s"]
+[sub_resource type="GDScript" id="GDScript_ua3eg"]
+script/source = "extends Area2D
+
+@onready var sprite: Sprite2D = $Sprite2D  # Optional background sprite
+var original_modulate := Color.WHITE
+var hover_modulate := Color(0.8, 1.0, 0.8, 1.0)  # Green tint
+var documents: Array[Area2D] = []
+
+func _ready() -> void:
+	add_to_group(\"drop_zone\")
+	if sprite:
+		original_modulate = sprite.modulate
+
+func on_document_hover(is_hovering: bool) -> void:
+	\"\"\"Called when a document enters/exits this zone\"\"\"
+	if sprite:
+		if is_hovering:
+			sprite.modulate = hover_modulate
+		else:
+			sprite.modulate = original_modulate
+
+func on_document_dropped(document: Area2D) -> void:
+	\"\"\"Called when a document is dropped in this zone\"\"\"
+	documents.append(document)
+	if sprite:
+		sprite.modulate = original_modulate
+	print(\"Document accepted! Total: \", documents.size())
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shdp8"]
 size = Vector2(1155, 656)
 
 [node name="DropZone" type="Area2D"]
 visibility_layer = 2
-script = ExtResource("1_tcq6s")
+script = SubResource("GDScript_ua3eg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(575.5, 327)
