@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dwceth4271y3c" path="res://Assets/suspects/suspect1.png" id="1_0gqvx"]
 [ext_resource type="Shader" uid="uid://cnt5vgidr2mwf" path="res://Shader/suspect.gdshader" id="2_clma5"]
-[ext_resource type="Script" uid="uid://b6vqg533tc1gp" path="res://Scripts/clickTarget.gd" id="3_clma5"]
+[ext_resource type="Script" uid="uid://b6vqg533tc1gp" path="res://Scripts/clickTargetOneTime.gd" id="3_clma5"]
 [ext_resource type="PackedScene" uid="uid://drcy5nnanxgt3" path="res://Dialogues/balloon.tscn" id="4_ry85e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_16llq"]
