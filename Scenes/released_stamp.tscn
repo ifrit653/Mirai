@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bikxfyp5ln5jo"]
+
+[ext_resource type="Texture2D" uid="uid://bxuvlhfkr6wcn" path="res://Assets/icones/released.png" id="1_n5qfg"]
+
+[node name="ReleasedStamp" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_n5qfg")

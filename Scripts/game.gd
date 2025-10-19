@@ -5,6 +5,7 @@ var documents: Array[Area2D] = []
 var next_z_index := 1  # For bringing documents to front
 
 func _ready() -> void:
+	print("adsadsdsdsd")
 	# Find all documents in the scene
 	for child in get_children():
 		if child is Area2D and child.is_in_group("document"):

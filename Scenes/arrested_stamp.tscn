@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceiaq5a5pocxq"]
+
+[ext_resource type="Texture2D" uid="uid://dkqnrfhanqev3" path="res://Assets/icones/arrested.png" id="1_25cjk"]
+
+[node name="ArrestedStamp" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_25cjk")
