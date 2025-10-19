@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://c61yxk6hlfvat"]
+
+[ext_resource type="Texture2D" uid="uid://wrglprcp6tii" path="res://Assets/bureau/interphone.png" id="1_fpgwq"]
+[ext_resource type="Script" uid="uid://b468nohdj13kw" path="res://Scripts/ClickTargetContinuous.gd" id="2_cmyk2"]
+[ext_resource type="PackedScene" uid="uid://huyxkqmaakqb" path="res://Dialogues/Call.tscn" id="3_mo717"]
+[ext_resource type="Script" uid="uid://bwiwn1gqeyyfe" path="res://Scripts/call.gd" id="4_avo7e"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Interphone" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(505, 205.99998)
+scale = Vector2(0.7283333, 0.7533334)
+texture = ExtResource("1_fpgwq")
+
+[node name="Area2D" type="Area2D" parent="Interphone"]
+position = Vector2(-693.3639, -273.45126)
+scale = Vector2(1.3729978, 1.3274335)
+script = ExtResource("2_cmyk2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interphone/Area2D"]
+position = Vector2(505, 205.99998)
+scale = Vector2(0.7283333, 0.7533334)
+polygon = PackedVector2Array(-92, -23, -92, -21.700012, -100.399994, -20, -102.899994, -20, -110.899994, -11, -112.7, -11, -114, -2.100006, -114, 16.399994, -124.399994, 42, -125.7, 42, -130, 69.79999, -130, 124.29999, -122.399994, 147, -123, 166, -123, 183.20001, -140.9, 203, -142.7, 203, -145.7, 219, -147.2, 219, -145, 241.20001, -145, 243.90002, -135, 252.79999, -135, 254.29999, -121, 260.2, -121, 262, 145.70001, 262, 157.70001, 253, 159.4, 253, 162.4, 244, 164, 244, 163, 199, 163, 192.70001, 103, -14.299988, 103, -17, 98, -21, 98, -23)
+
+[node name="InterphoneLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_right = 167.0
+offset_bottom = 34.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 21
+text = "Let the offender in."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Call" parent="." instance=ExtResource("3_mo717")]
+unique_name_in_owner = true
+script = ExtResource("4_avo7e")
