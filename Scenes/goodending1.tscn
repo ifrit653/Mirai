@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://blvdxe286hbbf"]
+
+[ext_resource type="Script" uid="uid://ceaxwksl56p1r" path="res://Scripts/badending_1.gd" id="1_o7n4i"]
+[ext_resource type="FontFile" uid="uid://ds2mtepv5ge0" path="res://fonts/Wilker-drVwl.otf" id="3_faaax"]
+[ext_resource type="AudioStream" uid="uid://wp0vp0oqxruh" path="res://Sounds/opening-144757.mp3" id="3_o7n4i"]
+[ext_resource type="Texture2D" uid="uid://d2rf66qhw5l0l" path="res://Assets/endings/goodending1.png" id="4_le6lr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uwig6"]
+font = ExtResource("3_faaax")
+font_size = 70
+outline_size = 20
+outline_color = Color(0.5860636, 0.6394449, 0.93590754, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kkby2"]
+font = ExtResource("3_faaax")
+font_size = 25
+outline_size = 2
+
+[sub_resource type="SystemFont" id="SystemFont_alxvg"]
+font_names = PackedStringArray("Britannic")
+
+[sub_resource type="LabelSettings" id="LabelSettings_eoatq"]
+font = SubResource("SystemFont_alxvg")
+font_size = 25
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_o7n4i")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 148.0
+offset_top = 300.0
+offset_right = 1061.0
+offset_bottom = 396.0
+text = "You upheld justice"
+label_settings = SubResource("LabelSettings_uwig6")
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = -97.0
+offset_top = 97.0
+offset_right = 1002.0
+offset_bottom = 334.0
+text = "\"Justice is not vengeance, it is the discipline that confines wrongdoing, not to punish, but to give the guilty a chance to become human again.\""
+label_settings = SubResource("LabelSettings_kkby2")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_o7n4i")
+volume_db = 13.34
+autoplay = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 255.0
+offset_bottom = 53.0
+text = "Press space to skip"
+label_settings = SubResource("LabelSettings_eoatq")
+
+[node name="Goodending1" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576.5, 321.75)
+scale = Vector2(0.6192708, 0.63564813)
+texture = ExtResource("4_le6lr")
