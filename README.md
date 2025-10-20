@@ -62,3 +62,16 @@ Mirai/
    cd Mirai
    git checkout dev
    ```
+   Open the project in Godot or your preferred IDE.
+   Build and run the game.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request.
+
+Report bugs or suggest features via GitHub Issues.
+Follow the Code of Conduct.
+
+## 📄 License
+
+This project is licensed under the [MIT License.](https://opensource.org/license/mit)
