@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpmt4taetvagt"]
+
+[ext_resource type="Script" uid="uid://cab7w07qe5ppl" path="res://components/hover_shader_component.gd" id="1_qqdxa"]
+
+[node name="HoverShaderComponent" type="Node2D"]
+script = ExtResource("1_qqdxa")

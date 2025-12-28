@@ -18,17 +18,6 @@ var is_mouse_over_interphone = false
 var interphone_clicked = false
 
 func _ready():
-	# Debug: Check if nodes are found
-	if not stamp:
-		push_error("Stamp node not found!")
-	if not hands:
-		push_error("Hands node not found!")
-	if not inner_thoughts:
-		push_error("InnerThoughts node not found!")
-	if not interphone:
-		push_error("Interphone node not found!")
-	if not call:
-		push_error("Call node not found!")
 	
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
@@ -48,13 +37,13 @@ func _handle_click():
 	var mouse_pos = get_global_mouse_position()
 	
 	if stamp and _is_point_in_sprite(stamp, mouse_pos):
-		print("Clicked on stamp")
+		push_warning("Clicked on stamp")
 		_handle_stamp_click()
 	elif hands and _is_point_in_sprite(hands, mouse_pos):
-		print("Clicked on hands")
+		push_warning("Clicked on hands")
 		_handle_hands_click()
 	elif interphone and _is_point_in_sprite(interphone, mouse_pos):
-		print("Clicked on interphone")
+		push_warning("Clicked on interphone")
 		interphone_clicked = true
 		_handle_interphone_click()
 
@@ -72,8 +61,7 @@ func _is_point_in_sprite(sprite: Sprite2D, point: Vector2) -> bool:
 	return rect.has_point(local_point)
 
 func _handle_stamp_click():
-	print("Stamp action triggered")
-	pass
+	show_paper()
 
 func _handle_hands_click():
 	print("Starting hands dialogue (OfficerInnerThoughts)...")
@@ -91,9 +79,9 @@ func _on_mouse_entered():
 		stamp.material = material.duplicate()
 	if hands:
 		hands.material = material.duplicate()
-	if interphone:
-		interphone.material = material.duplicate()
-		is_mouse_over_interphone = true
+	#if interphone:
+		#interphone.material = material.duplicate()
+		#is_mouse_over_interphone = true
 
 func _on_mouse_exited():
 	if hands:
@@ -107,7 +95,7 @@ func _on_mouse_exited():
 		interphone_label.hide()
 
 func start_dialogue(dialogue_resource: Resource, dialogue_type: String = "inner_thoughts"):
-	print("Starting dialogue: " + dialogue_type)
+	push_warning("Starting dialogue: " + dialogue_type)
 	
 	var balloon_node = inner_thoughts if dialogue_type == "inner_thoughts" else call
 	
@@ -127,3 +115,37 @@ func _process(_delta):
 		var mouse_pos = get_global_mouse_position()
 		interphone_label.global_position = mouse_pos + Vector2(10, 10)  # Offset from mouse
 		interphone_label.show()
+		
+var current_paper_view = null
+var paper_scale = 1.8
+var is_paper_shown := false
+func _on_paper_view_closed():
+	current_paper_view = null
+	is_paper_shown = false
+	
+func show_paper():
+	# Check if paper is already shown
+	if current_paper_view != null and is_instance_valid(current_paper_view):
+		print("Paper view already open!")
+		return
+	
+	var paper_view_scene = preload("res://Scenes/decision_paper.tscn")
+	var paper_view = paper_view_scene.instantiate()
+	var parrent = get_tree().root
+	parrent.add_child(paper_view)
+	
+	# Apply the scale to the paper_view node itself
+	paper_view.scale = Vector2(paper_scale, paper_scale)
+	
+	# Center it in the screen (accounting for the scale)
+	var viewport_rect = get_viewport().get_visible_rect()
+	var paper_size = paper_view.paper_sprite.texture.get_size() * paper_scale
+	paper_view.position = (viewport_rect.size / 2) - (paper_size / 2)
+	
+	# Store reference
+	current_paper_view = paper_view
+	
+	# Connect to cleanup when paper is closed
+	paper_view.tree_exited.connect(_on_paper_view_closed)
+	
+	is_paper_shown = true

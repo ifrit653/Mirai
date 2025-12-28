@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dm5mmcsfxvelm"]
 
 [ext_resource type="Script" uid="uid://bxfibttuhs2sv" path="res://Scripts/paper.gd" id="1_c7gsp"]
-[ext_resource type="Texture2D" uid="uid://b6govntchx08a" path="res://Assets/bureau/new papers.png" id="2_c7gsp"]
+[ext_resource type="Texture2D" uid="uid://dsnhfwl0vwude" path="res://Assets/bureau/new papers.png" id="2_c7gsp"]
 
 [node name="Paper" type="Area2D"]
 script = ExtResource("1_c7gsp")

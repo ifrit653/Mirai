@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgjpc00kajjbn"]
+[gd_scene load_steps=6 format=3 uid="uid://dgjpc00kajjbn"]
 
 [ext_resource type="Texture2D" uid="uid://wrglprcp6tii" path="res://Assets/bureau/interphone.png" id="1_fpgwq"]
-[ext_resource type="Script" path="res://Scripts/ClickTargetContinuous.gd" id="2_cmyk2"]
+[ext_resource type="Script" uid="uid://b468nohdj13kw" path="res://Scripts/ClickTargetContinuous.gd" id="2_cmyk2"]
 [ext_resource type="PackedScene" uid="uid://huyxkqmaakqb" path="res://Dialogues/Call.tscn" id="3_mo717"]
-[ext_resource type="Script" path="res://Scripts/call.gd" id="4_avo7e"]
+[ext_resource type="Script" uid="uid://bwiwn1gqeyyfe" path="res://Scripts/call.gd" id="4_avo7e"]
+[ext_resource type="PackedScene" uid="uid://bpmt4taetvagt" path="res://components/HoverShaderComponent.tscn" id="5_avo7e"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Interphone" type="Node2D"]
 
 [node name="Interphone" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -22,6 +23,10 @@ script = ExtResource("2_cmyk2")
 position = Vector2(505, 205.99998)
 scale = Vector2(0.7283333, 0.7533334)
 polygon = PackedVector2Array(-92, -23, -92, -21.700012, -100.399994, -20, -102.899994, -20, -110.899994, -11, -112.7, -11, -114, -2.100006, -114, 16.399994, -124.399994, 42, -125.7, 42, -130, 69.79999, -130, 124.29999, -122.399994, 147, -123, 166, -123, 183.20001, -140.9, 203, -142.7, 203, -145.7, 219, -147.2, 219, -145, 241.20001, -145, 243.90002, -135, 252.79999, -135, 254.29999, -121, 260.2, -121, 262, 145.70001, 262, 157.70001, 253, 159.4, 253, 162.4, 244, 164, 244, 163, 199, 163, 192.70001, 103, -14.299988, 103, -17, 98, -21, 98, -23)
+
+[node name="HoverShaderComponent" parent="Interphone" instance=ExtResource("5_avo7e")]
+position = Vector2(-693.3639, -273.45123)
+scale = Vector2(1.3729978, 1.3274333)
 
 [node name="InterphoneLabel" type="Label" parent="."]
 unique_name_in_owner = true

@@ -1,9 +1,8 @@
 extends Node2D
-
+class_name DecisionPaper
 # References
-@onready var paper = $Paper
+@onready var paper_sprite = $Paper
 @onready var stamp_preview = $StampPreview
-
 # Stamp types
 enum StampType {
 	APPROVED,
@@ -87,7 +86,7 @@ func place_stamp(pos: Vector2, stamp_type: StampType):
 	stamp.global_position = pos
 	stamp.z_index = 10
 	stamp.scale = Vector2(0.5, 0.5)
-	paper.add_child(stamp)
+	paper_sprite.add_child(stamp)
 	
 	current_stamp = stamp
 	stamp.rotation_degrees = randf_range(-10, 10)
