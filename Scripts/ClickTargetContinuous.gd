@@ -154,11 +154,9 @@ func show_paper():
 	# Position needs to account for the paper's origin (usually top-left)
 	paper_view.position = (viewport_size / 2) - sprite_offset
 	
-	push_warning('viewport size: ', viewport_size)
-	push_warning('Paper rect: ', paper_rect)
-	push_warning('Paper size: ', paper_size)
-	push_warning('Sprite offset: ', sprite_offset)
-	push_warning('Final position: ', paper_view.position)
+	get_tree().paused = true
+	paper_view.process_mode = Node.PROCESS_MODE_ALWAYS
+	canvas_layer.process_mode = Node.PROCESS_MODE_ALWAYS
 	
 	# Store reference (store the canvas_layer too so we can clean it up)
 	current_paper_view = paper_view
@@ -168,3 +166,10 @@ func show_paper():
 	paper_view.tree_exited.connect(_on_paper_view_closed)
 	
 	is_paper_shown = true
+func _on_paper_view_close():
+	get_tree().paused = false
+	current_paper_view = null
+	if current_canvas_layer and is_instance_id_valid(current_canvas_layer):
+		current_canvas_layer.queue_free()
+	current_canvas_layer = null
+	is_paper_shown = false
