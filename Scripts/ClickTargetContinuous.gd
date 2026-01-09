@@ -142,14 +142,23 @@ func show_paper():
 	canvas_layer.add_child(paper_view)
 	
 	# Apply the scale to the paper_view node itself
-	#paper_view.scale = Vector2(paper_scale, paper_scale)
+	paper_view.scale = Vector2(paper_scale, paper_scale)
 	
-	# Center it in the screen - use get_viewport_rect() instead
 	var viewport_size = get_viewport().get_visible_rect().size
-	var paper_size = paper_view.paper_sprite.texture.get_size() * paper_scale
+	
+	var paper_rect = paper_view.paper_sprite.get_rect()
+	var paper_size = paper_rect.size * paper_scale
+	
+	var sprite_offset = paper_view.paper_sprite.position * paper_scale 
 	
 	# Position needs to account for the paper's origin (usually top-left)
-	paper_view.position = (viewport_size - paper_size) / 2
+	paper_view.position = (viewport_size / 2) - sprite_offset
+	
+	push_warning('viewport size: ', viewport_size)
+	push_warning('Paper rect: ', paper_rect)
+	push_warning('Paper size: ', paper_size)
+	push_warning('Sprite offset: ', sprite_offset)
+	push_warning('Final position: ', paper_view.position)
 	
 	# Store reference (store the canvas_layer too so we can clean it up)
 	current_paper_view = paper_view
