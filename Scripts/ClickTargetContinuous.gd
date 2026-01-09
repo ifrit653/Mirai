@@ -10,6 +10,7 @@ signal area_clicked
 @onready var call: CanvasLayer = %Call
 
 # Preload the dialogue resources and shader
+var current_canvas_layer = null
 var dialogue_resource = preload("res://Dialogues/OfficerInnerThoughtsuntitled.dialogue")
 var call_dialogue_resource = preload("res://Dialogues/call.dialogue")
 var suspect_shader = preload("res://Shader/suspect.gdshader")
@@ -75,8 +76,8 @@ func _on_mouse_entered():
 	var material = ShaderMaterial.new()
 	material.shader = suspect_shader
 	
-	if stamp:
-		stamp.material = material.duplicate()
+	#if stamp:
+		#stamp.material = material.duplicate()
 	if hands:
 		hands.material = material.duplicate()
 	#if interphone:
@@ -121,6 +122,9 @@ var paper_scale = 1.8
 var is_paper_shown := false
 func _on_paper_view_closed():
 	current_paper_view = null
+	if current_canvas_layer and is_instance_valid(current_canvas_layer):
+		current_canvas_layer.queue_free()
+	current_canvas_layer = null
 	is_paper_shown = false
 	
 func show_paper():
@@ -131,19 +135,25 @@ func show_paper():
 	
 	var paper_view_scene = preload("res://Scenes/decision_paper.tscn")
 	var paper_view = paper_view_scene.instantiate()
-	var parrent = get_tree().root
-	parrent.add_child(paper_view)
+	
+	# Create or get a CanvasLayer for UI elements
+	var canvas_layer = CanvasLayer.new()
+	get_tree().root.add_child(canvas_layer)
+	canvas_layer.add_child(paper_view)
 	
 	# Apply the scale to the paper_view node itself
 	paper_view.scale = Vector2(paper_scale, paper_scale)
 	
-	# Center it in the screen (accounting for the scale)
-	var viewport_rect = get_viewport().get_visible_rect()
+	# Center it in the screen - use get_viewport_rect() instead
+	var viewport_size = get_viewport().get_visible_rect().size
 	var paper_size = paper_view.paper_sprite.texture.get_size() * paper_scale
-	paper_view.position = (viewport_rect.size / 2) - (paper_size / 2)
 	
-	# Store reference
+	# Position needs to account for the paper's origin (usually top-left)
+	paper_view.position = (viewport_size - paper_size) / 2
+	
+	# Store reference (store the canvas_layer too so we can clean it up)
 	current_paper_view = paper_view
+	current_canvas_layer = canvas_layer  # Add this variable to your class
 	
 	# Connect to cleanup when paper is closed
 	paper_view.tree_exited.connect(_on_paper_view_closed)
