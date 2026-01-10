@@ -27,6 +27,4 @@ shape = SubResource("RectangleShape2D_n7b02")
 position = Vector2(54, 68.5)
 shape = SubResource("RectangleShape2D_e4kue")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="StampPreview" type="Sprite2D" parent="."]
