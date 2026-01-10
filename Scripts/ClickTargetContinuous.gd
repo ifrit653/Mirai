@@ -138,38 +138,43 @@ func show_paper():
 	
 	# Create or get a CanvasLayer for UI elements
 	var canvas_layer = CanvasLayer.new()
+	canvas_layer.layer = 100  # Put it on top
 	get_tree().root.add_child(canvas_layer)
+	
+	# Add a dark overlay to block background clicks
+	var overlay = ColorRect.new()
+	overlay.color = Color(0, 0, 0, 0.5)  # Semi-transparent black
+	overlay.size = get_viewport().get_visible_rect().size
+	overlay.mouse_filter = Control.MOUSE_FILTER_STOP  # Block mouse input to background
+	canvas_layer.add_child(overlay)
+	
+	# Add paper on top of overlay
 	canvas_layer.add_child(paper_view)
 	
-	# Apply the scale to the paper_view node itself
+	# Apply the scale
 	paper_view.scale = Vector2(paper_scale, paper_scale)
 	
+	# Get viewport size
 	var viewport_size = get_viewport().get_visible_rect().size
 	
-	var paper_rect = paper_view.paper_sprite.get_rect()
-	var paper_size = paper_rect.size * paper_scale
+	# Account for the sprite's offset/position within the parent
+	var sprite_offset = paper_view.paper_sprite.position * paper_scale
 	
-	var sprite_offset = paper_view.paper_sprite.position * paper_scale 
-	
-	# Position needs to account for the paper's origin (usually top-left)
+	# Center the paper view
 	paper_view.position = (viewport_size / 2) - sprite_offset
 	
-	get_tree().paused = true
-	paper_view.process_mode = Node.PROCESS_MODE_ALWAYS
-	canvas_layer.process_mode = Node.PROCESS_MODE_ALWAYS
-	
-	# Store reference (store the canvas_layer too so we can clean it up)
+	# Store reference
 	current_paper_view = paper_view
-	current_canvas_layer = canvas_layer  # Add this variable to your class
+	current_canvas_layer = canvas_layer
 	
 	# Connect to cleanup when paper is closed
 	paper_view.tree_exited.connect(_on_paper_view_closed)
 	
 	is_paper_shown = true
-func _on_paper_view_close():
-	get_tree().paused = false
-	current_paper_view = null
-	if current_canvas_layer and is_instance_id_valid(current_canvas_layer):
-		current_canvas_layer.queue_free()
-	current_canvas_layer = null
-	is_paper_shown = false
+#func _on_paper_view_close():
+	#get_tree().paused = false
+	#current_paper_view = null
+	#if current_canvas_layer and is_instance_id_valid(current_canvas_layer):
+		#current_canvas_layer.queue_free()
+	#current_canvas_layer = null
+	#is_paper_shown = false
