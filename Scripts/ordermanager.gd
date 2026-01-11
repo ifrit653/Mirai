@@ -14,7 +14,7 @@ extends Node2D
 
 # References to Area2D nodes
 @onready var suspect_area: Area2D = $Suspect0/Suspect/Area2D
-@onready var stamp_area: Area2D = $Stamp/Stamp/Area2D
+@onready var stamp_area: Area2D = $Stamp/Stamp/StampSpriteArea
 @onready var officer_area: Area2D = $Officer/Hands/Area2D
 @onready var interphone_area: Area2D = $Interphone/Interphone/Area2D
 

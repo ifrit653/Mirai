@@ -27,6 +27,17 @@ shape = SubResource("RectangleShape2D_n7b02")
 position = Vector2(54, 68.5)
 shape = SubResource("RectangleShape2D_e4kue")
 
+[node name="StampPreview" type="Sprite2D" parent="."]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="StampPreview" type="Sprite2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="CloseButton" type="Button" parent="Node2D"]
+offset_left = 82.0
+offset_top = -157.0
+offset_right = 107.0
+offset_bottom = -132.0
+text = "X"
+
+[connection signal="pressed" from="Node2D/CloseButton" to="." method="_on_close_button_pressed"]

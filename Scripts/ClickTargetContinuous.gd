@@ -10,6 +10,7 @@ signal area_clicked
 @onready var call: CanvasLayer = %Call
 
 # Preload the dialogue resources and shader
+var current_canvas_layer = null
 var dialogue_resource = preload("res://Dialogues/OfficerInnerThoughtsuntitled.dialogue")
 var call_dialogue_resource = preload("res://Dialogues/call.dialogue")
 var suspect_shader = preload("res://Shader/suspect.gdshader")
@@ -75,8 +76,10 @@ func _on_mouse_entered():
 	var material = ShaderMaterial.new()
 	material.shader = suspect_shader
 	
-	if stamp:
-		stamp.material = material.duplicate()
+	#if stamp:
+		#stamp.material = material.duplicate()
+	#if stamp:
+		#stamp.material = material.duplicate()
 	if hands:
 		hands.material = material.duplicate()
 	#if interphone:
@@ -119,10 +122,6 @@ func _process(_delta):
 var current_paper_view = null
 var paper_scale = 1.8
 var is_paper_shown := false
-func _on_paper_view_closed():
-	current_paper_view = null
-	is_paper_shown = false
-	
 func show_paper():
 	# Check if paper is already shown
 	if current_paper_view != null and is_instance_valid(current_paper_view):
@@ -131,21 +130,46 @@ func show_paper():
 	
 	var paper_view_scene = preload("res://Scenes/decision_paper.tscn")
 	var paper_view = paper_view_scene.instantiate()
-	var parrent = get_tree().root
-	parrent.add_child(paper_view)
 	
-	# Apply the scale to the paper_view node itself
+	# Create or get a CanvasLayer for UI elements
+	var canvas_layer = CanvasLayer.new()
+	get_tree().root.add_child(canvas_layer)
+	canvas_layer.add_child(paper_view)
+	
+	# Apply the scale
 	paper_view.scale = Vector2(paper_scale, paper_scale)
 	
-	# Center it in the screen (accounting for the scale)
-	var viewport_rect = get_viewport().get_visible_rect()
-	var paper_size = paper_view.paper_sprite.texture.get_size() * paper_scale
-	paper_view.position = (viewport_rect.size / 2) - (paper_size / 2)
+	# Get viewport size
+	var viewport_size = get_viewport().get_visible_rect().size
+	
+	# Account for the sprite's offset/position within the parent
+	var sprite_offset = paper_view.paper_sprite.position * paper_scale
+	
+	# Center the paper view
+	paper_view.position = (viewport_size / 2) - sprite_offset
+	
+	# PAUSE THE GAME - this stops all processing except UI nodes
+	get_tree().paused = true
+	# Make sure the paper can still process while paused
+	paper_view.process_mode = Node.PROCESS_MODE_ALWAYS
+	canvas_layer.process_mode = Node.PROCESS_MODE_ALWAYS
 	
 	# Store reference
 	current_paper_view = paper_view
+	current_canvas_layer = canvas_layer
 	
 	# Connect to cleanup when paper is closed
 	paper_view.tree_exited.connect(_on_paper_view_closed)
 	
 	is_paper_shown = true
+
+
+func _on_paper_view_closed():
+	# UNPAUSE THE GAME
+	get_tree().paused = false
+	
+	current_paper_view = null
+	if current_canvas_layer and is_instance_valid(current_canvas_layer):
+		current_canvas_layer.queue_free()
+	current_canvas_layer = null
+	is_paper_shown = false
