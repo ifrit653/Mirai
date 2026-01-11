@@ -1,0 +1,252 @@
+[gd_scene load_steps=2 format=3 uid="uid://e33yb4yti1k1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uebo3"]
+font_size = 40
+
+[node name="EndofDay" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1150.0
+offset_bottom = 653.0
+color = Color(0.14406255, 0.14406255, 0.14406255, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 1150.0
+offset_bottom = 69.0
+text = "END OF DAY"
+label_settings = SubResource("LabelSettings_uebo3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -1.0
+offset_top = 77.0
+offset_right = 1147.0
+offset_bottom = 143.0
+text = "Day {i}"
+label_settings = SubResource("LabelSettings_uebo3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 100.0
+offset_top = 167.0
+offset_right = 615.0
+offset_bottom = 589.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Fiche de paie"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Savings"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "value"
+horizontal_alignment = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Salary"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "value"
+horizontal_alignment = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Bonus"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "value"
+horizontal_alignment = 2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Corruption Gain"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "value"
+horizontal_alignment = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Rent"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "value"
+horizontal_alignment = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Medecine"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "value"
+horizontal_alignment = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Debt"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "value"
+horizontal_alignment = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Penality"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "value"
+horizontal_alignment = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "rapport des courses"
+horizontal_alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+offset_left = 706.0
+offset_top = 208.0
+offset_right = 1078.0
+offset_bottom = 585.0
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Status"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Our Status"
+
+[node name="Label2" type="Label" parent="VBoxContainer2/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "hungry/dead or sick"
+horizontal_alignment = 2
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Wife Status"
+
+[node name="Label2" type="Label" parent="VBoxContainer2/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "hungry/dead or sick"
+horizontal_alignment = 2
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Child status"
+
+[node name="Label2" type="Label" parent="VBoxContainer2/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "hungry/dead or sick"
+horizontal_alignment = 2
+
+[node name="HBoxContainer11" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer11"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Uncle Status"
+
+[node name="Label2" type="Label" parent="VBoxContainer2/HBoxContainer11"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "hungry/dead or sick"
+horizontal_alignment = 2

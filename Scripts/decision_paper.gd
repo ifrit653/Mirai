@@ -112,6 +112,6 @@ func clear_stamp():
 		current_stamp = null
 
 func close_decision_paper():
-	queue_free()
+	queue_free()	
 func _on_close_button_pressed() -> void:
 	close_decision_paper()
