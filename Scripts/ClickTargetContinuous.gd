@@ -80,11 +80,10 @@ func _on_mouse_entered():
 		#stamp.material = material.duplicate()
 	#if stamp:
 		#stamp.material = material.duplicate()
-	if hands:
-		hands.material = material.duplicate()
-	#if interphone:
-		#interphone.material = material.duplicate()
-		#is_mouse_over_interphone = true
+	#if hands:
+		#hands.material = material.duplicate()
+	if interphone:
+		is_mouse_over_interphone = true
 
 func _on_mouse_exited():
 	if hands:
