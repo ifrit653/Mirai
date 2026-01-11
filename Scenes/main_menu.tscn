@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://daf1v01uwgiho"]
 
-[ext_resource type="Texture2D" uid="uid://gpxtvdrqen3m" path="res://Assets/menu screen.png" id="1_28flt"]
-[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_ce3w2"]
-[ext_resource type="StyleBox" uid="uid://dket7r6mrqvqm" path="res://Shader/hover.tres" id="2_48xlc"]
-[ext_resource type="AudioStream" uid="uid://ctljumoe5btmn" path="res://Sounds/Strings of the Villain.mp3" id="4_n45e2"]
+[ext_resource type="Texture2D" uid="uid://srnaqjol4sjj" path="res://Assets/menu screen.png" id="1_28flt"]
+[ext_resource type="Script" uid="uid://deoxxgjrdu61v" path="res://Scripts/main_menu.gd" id="1_ce3w2"]
+[ext_resource type="StyleBox" path="res://Shader/hover.tres" id="2_48xlc"]
+[ext_resource type="AudioStream" uid="uid://bm0b3sa057clb" path="res://Sounds/Strings of the Villain.mp3" id="4_n45e2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7nb0n"]
 
@@ -156,6 +156,7 @@ text = "Exit"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_n45e2")
 autoplay = true
+bus = &"SFX"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]

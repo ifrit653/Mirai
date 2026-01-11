@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://d4b4kp5eb7yuu"]
 
 [ext_resource type="PackedScene" uid="uid://dgjpc00kajjbn" path="res://Scenes/interphone.tscn" id="1_2jlrf"]
-[ext_resource type="Texture2D" uid="uid://capmk8oduuofa" path="res://Assets/bureau/arrièreplan.png" id="1_vggx3"]
-[ext_resource type="PackedScene" uid="uid://2ahfs8le0qjr" path="res://Scenes/officer.tscn" id="2_7xo7e"]
-[ext_resource type="Texture2D" uid="uid://dd77w2632si1w" path="res://Assets/bureau/new desk.png" id="2_cumm5"]
-[ext_resource type="AudioStream" uid="uid://cw17ct3n0exri" path="res://Sounds/Relaxing Ambient Soundscape - Police Headquarters - Police Station Ambience - Radios - PhoneTyping.mp3" id="3_2jlrf"]
+[ext_resource type="Texture2D" uid="uid://36pqkh2yjkeu" path="res://Assets/bureau/arrièreplan.png" id="1_vggx3"]
+[ext_resource type="PackedScene" path="res://Scenes/officer.tscn" id="2_7xo7e"]
+[ext_resource type="Texture2D" uid="uid://d4eyebvindrwv" path="res://Assets/bureau/new desk.png" id="2_cumm5"]
+[ext_resource type="AudioStream" uid="uid://c8e847j6gkbh2" path="res://Sounds/Relaxing Ambient Soundscape - Police Headquarters - Police Station Ambience - Radios - PhoneTyping.mp3" id="3_2jlrf"]
 [ext_resource type="PackedScene" uid="uid://dqlvhc3lmeg31" path="res://Scenes/stamp.tscn" id="3_eqlnk"]
-[ext_resource type="Script" path="res://Scripts/ordermanager.gd" id="4_2vylc"]
-[ext_resource type="Script" path="res://Scripts/audio_stream_player_2d.gd" id="4_4luf0"]
+[ext_resource type="Script" uid="uid://beyabqaa3vxiy" path="res://Scripts/ordermanager.gd" id="4_2vylc"]
+[ext_resource type="Script" uid="uid://dw65l6fus1ypl" path="res://Scripts/audio_stream_player_2d.gd" id="4_4luf0"]
 [ext_resource type="PackedScene" uid="uid://defwsqvljheyh" path="res://Scenes/suspect.tscn" id="4_o84nh"]
 [ext_resource type="PackedScene" uid="uid://dm5mmcsfxvelm" path="res://Scenes/paper.tscn" id="10_4luf0"]
 [ext_resource type="PackedScene" uid="uid://cuv1ixixkyvxb" path="res://Scenes/ending_manager.tscn" id="11_q644x"]
@@ -29,6 +29,7 @@ texture = ExtResource("2_cumm5")
 stream = ExtResource("3_2jlrf")
 volume_db = 24.0
 autoplay = true
+bus = &"Music"
 script = ExtResource("4_4luf0")
 
 [node name="OrderManager" type="Node2D" parent="."]
